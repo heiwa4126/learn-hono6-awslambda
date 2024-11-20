@@ -53,6 +53,7 @@ bun run destory
 - Lambda Function URL で出来るか試す。
 - デプロイせずに、ローカルで動くかためす。RequestContext に絡んだ奴はだめだろうけど。→ tsx いれて `bun dev`で動かすようにした。
 - esbundle するんだったら minify してほしい。→ やってみた。NodejsFunction()の[interface BundlingOptions · AWS CDK](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda_nodejs.BundlingOptions.html)で出来る。
+- ロググループが stack で管理されないのを直したい。
 
 ## tags
 
