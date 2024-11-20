@@ -45,3 +45,13 @@ bun run deploy
 #
 bun run destory
 ```
+
+## メモ
+
+- API Gateway が `/{proxy+} - ANY`になってる。
+- Lambda Function URL で出来るか試す。
+- デプロイせずに、ローカルで動くかためす。RequestContext に絡んだ奴はだめだろうけど。
+
+## tags
+
+- v0.1.1 - [Serve Binary data](https://hono.dev/docs/getting-started/aws-lambda#serve-binary-data) の前までやったやつ
