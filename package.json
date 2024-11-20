@@ -1,6 +1,6 @@
 {
 	"name": "learn-hono6-awslambda",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"bin": {
 		"learn-hono6-awslambda": "bin/learn-hono6-awslambda.js"
 	},
