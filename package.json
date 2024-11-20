@@ -9,7 +9,7 @@
 		"watch": "tsc -w",
 		"test": "jest",
 		"cdk": "cdk",
-		"format": "biome format --write . && dprint fmt && textlint --fix README.md",
+		"format": "biome format --write . && dprint fmt && textlint --fix \"**/*.md\"",
 		"check": "biome check --write . && dprint check",
 		"list": "cdk list",
 		"deploy": "cdk deploy --outputs-file outputs.json",
