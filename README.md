@@ -49,8 +49,10 @@ bun run destory
 ## メモ
 
 - API Gateway が `/{proxy+} - ANY`になってる。
+- endpoit が `myapiEndpoint8EB17201` みたいので出るので、固定の CfnOutput()追加した。元のを消す方法がわからん。
 - Lambda Function URL で出来るか試す。
-- デプロイせずに、ローカルで動くかためす。RequestContext に絡んだ奴はだめだろうけど。
+- デプロイせずに、ローカルで動くかためす。RequestContext に絡んだ奴はだめだろうけど。→ tsx いれて `bun dev`で動かすようにした。
+- esbundle するんだったら minify してほしい。→ やってみた。NodejsFunction()の[interface BundlingOptions · AWS CDK](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda_nodejs.BundlingOptions.html)で出来る。
 
 ## tags
 
