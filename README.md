@@ -4,8 +4,8 @@
 
 ## 事前に要るもの
 
-- docker - `public.ecr.aws/sam/build-nodejs20.x:latest` を使ってtsをcjsにするらしい。
-- またはesbuild - `bun add esbuild -D` しておけばdocker不要みたい。
+- docker - `public.ecr.aws/sam/build-nodejs20.x:latest` を使って ts を cjs にするらしい。
+- または esbuild - `bun add esbuild -D` しておけば docker 不要みたい。
 
 ## 手順
 
@@ -29,7 +29,7 @@ git commit -am 'initial commit'
 クラス名も、元のディレクトリ名をキャメルケースにしたものになっているので(`LearnHono6AwslambdaStack`)
 MyAppStack からリネーム。
 
-package.jsonにちょっとだけrun-scriptを追加して、
+package.json にちょっとだけ run-script を追加して、
 
 ```sh
 # 以下2つはオプション、動作確認だけ
@@ -37,13 +37,6 @@ bun run list    # "LearnHono6AwslambdaStack"
 bun run build   # 'cdk.out/LearnHono6AwslambdaStack.template.json'
 #
 bun run deploy
+#
+bun run destory
 ```
-
-## Useful commands
-
-- `npm run build` compile typescript to js
-- `npm run watch` watch for changes and compile
-- `npm run test` perform the jest unit tests
-- `npx cdk deploy` deploy this stack to your default AWS account/region
-- `npx cdk diff` compare deployed stack with current state
-- `npx cdk synth` emits the synthesized CloudFormation template
