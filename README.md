@@ -8,7 +8,7 @@
 - docker - `public.ecr.aws/sam/build-nodejs20.x:latest` を使って ts を cjs にするらしい。
 - または esbuild - `bun add esbuild -D` しておけば docker 不要みたい。
 
-## 手順
+## 生成手順
 
 ```sh
 mkdir learn-hono6-awslambda
