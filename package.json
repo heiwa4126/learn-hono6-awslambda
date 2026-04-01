@@ -19,22 +19,22 @@
 		"dev": "tsx watch script/node.ts"
 	},
 	"devDependencies": {
-		"@hono/node-server": "^1.19.9",
+		"@hono/node-server": "^1.19.12",
 		"@types/jest": "^30.0.0",
-		"@types/node": "25.3.3",
-		"aws-cdk": "2.1108.0",
-		"esbuild": "^0.27.3",
-		"jest": "^30.2.0",
+		"@types/node": "25.5.0",
+		"aws-cdk": "2.1115.1",
+		"esbuild": "^0.27.4",
+		"jest": "^30.3.0",
 		"ts-jest": "^29.4.6",
 		"ts-node": "^10.9.2",
 		"tsx": "^4.21.0",
-		"typescript": "~5.9.3"
+		"typescript": "~6.0.2"
 	},
 	"dependencies": {
-		"aws-cdk-lib": "2.240.0",
-		"constructs": "^10.5.1",
+		"aws-cdk-lib": "2.246.0",
+		"constructs": "^10.6.0",
 		"date-fns": "^4.1.0",
-		"hono": "^4.12.3",
+		"hono": "^4.12.9",
 		"source-map-support": "^0.5.21"
 	}
 }
