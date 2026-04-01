@@ -9,14 +9,23 @@
 		"watch": "tsc -w",
 		"test": "jest",
 		"cdk": "cdk",
-		"format": "biome format --write . && dprint fmt && textlint --fix \"**/*.md\"",
-		"check": "biome check --write . && dprint check",
+		"preinstall": "bun audit",
+		"format": "oxfmt",
+		"lint": "oxlint",
+		"check": "oxfmt && oxlint --fix",
 		"list": "cdk list",
 		"deploy": "cdk deploy --outputs-file outputs.json",
 		"bootstrap": "cdk bootstrap",
 		"diff": "cdk diff",
 		"destroy": "cdk destroy",
 		"dev": "tsx watch script/node.ts"
+	},
+	"dependencies": {
+		"aws-cdk-lib": "2.246.0",
+		"constructs": "^10.6.0",
+		"date-fns": "^4.1.0",
+		"hono": "^4.12.9",
+		"source-map-support": "^0.5.21"
 	},
 	"devDependencies": {
 		"@hono/node-server": "^1.19.12",
@@ -29,12 +38,5 @@
 		"ts-node": "^10.9.2",
 		"tsx": "^4.21.0",
 		"typescript": "~6.0.2"
-	},
-	"dependencies": {
-		"aws-cdk-lib": "2.246.0",
-		"constructs": "^10.6.0",
-		"date-fns": "^4.1.0",
-		"hono": "^4.12.9",
-		"source-map-support": "^0.5.21"
 	}
 }
