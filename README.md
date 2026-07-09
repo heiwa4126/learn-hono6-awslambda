@@ -48,9 +48,11 @@ bun run destroy
 
 ## TODO
 
-- [ ] Lambda Function URL で出来るか試す
-- [x] API Gateway が `/{proxy+} - ANY`になってる。これはどうしようもないのかな
-- [x] endpoint が `myapiEndpoint8EB17201` みたいので出るので、固定の CfnOutput()追加した。元のを消す方法がわからん
+- [ ] endpoint が `myapiEndpoint8EB17201` みたいので出るので、固定の CfnOutput()追加した。元のを消す方法がわからん
+- [x] Lambda Function URLs で出来るか試す → outputs.fnUrlurl に URLが出る。とりあえず動くみたい
+- [x] ts7 にして、CDK から ts-node 取り除く → done
+- [x] jest やめて bun test にする → done
+- [x] API Gateway が `/{proxy+} - ANY` になってる。これはどうしようもないのかな
 - [x] デプロイせずに、ローカルで動くかためす。RequestContext に絡んだ奴はだめだろうけど。→ tsx いれて `bun dev`で動かすようにした
 - [x] esbuild するんだったら minify してほしい。→ やってみた。NodejsFunction() の [interface BundlingOptions · AWS CDK](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda_nodejs.BundlingOptions.html) で出来る
 - [x] ロググループが stack で管理されないのを直したい → たぶん直した

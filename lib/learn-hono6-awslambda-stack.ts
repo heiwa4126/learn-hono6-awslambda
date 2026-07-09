@@ -25,12 +25,22 @@ export class LearnHono6AwsLambdaStack extends cdk.Stack {
 			retention: logs.RetentionDays.ONE_WEEK,
 		});
 
-		fn.addFunctionUrl({
+		// Lambda Function URL版
+		const fnUrl = fn.addFunctionUrl({
 			authType: lambda.FunctionUrlAuthType.NONE,
+			cors: {
+				allowedMethods: [lambda.HttpMethod.ALL],
+				allowedOrigins: ["*"], // まあテストなんで
+			},
 		});
+		new cdk.CfnOutput(this, "fnUrl_url", {
+			value: fnUrl.url,
+		});
+
 		const gw = new apigw.LambdaRestApi(this, "my_api1", {
 			handler: fn,
 		});
+
 		new cdk.CfnOutput(this, "api_url", {
 			value: gw.url,
 		});
