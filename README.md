@@ -29,31 +29,31 @@ git commit -am 'initial commit'
 のコードを
 `lib/cdk-stack.ts`
 ではなく、元のディレクトリ名をベースにした名前の`-stack.ts` になってるので、そこへコピペ。(`lib/learn-hono6-awslambda-stack.ts`)。
-クラス名も、元のディレクトリ名をキャメルケースにしたものになっているので(`LearnHono6AwslambdaStack`)
+クラス名も、元のディレクトリ名をキャメルケースにしたものになっているので(`LearnHono6AwsLambdaStack`)
 MyAppStack からリネーム。
 
 package.json にちょっとだけ run-script を追加して、
 
 ```sh
 # 以下2つはオプション、動作確認だけ
-bun run list    # "LearnHono6AwslambdaStack"
-bun run build   # 'cdk.out/LearnHono6AwslambdaStack.template.json'
+bun run list    # "LearnHono6AwsLambdaStack"
+bun run build   # 'cdk.out/LearnHono6AwsLambdaStack.template.json'
 # 指定のリージョンでCDKを始めて使うなら
 bun run bootstrap
 #
 bun run deploy
 #
-bun run destory
+bun run destroy
 ```
 
-## メモ
+## TODO
 
-- API Gateway が `/{proxy+} - ANY`になってる。
-- endpoit が `myapiEndpoint8EB17201` みたいので出るので、固定の CfnOutput()追加した。元のを消す方法がわからん。
-- Lambda Function URL で出来るか試す。
-- デプロイせずに、ローカルで動くかためす。RequestContext に絡んだ奴はだめだろうけど。→ tsx いれて `bun dev`で動かすようにした。
-- esbundle するんだったら minify してほしい。→ やってみた。NodejsFunction()の[interface BundlingOptions · AWS CDK](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda_nodejs.BundlingOptions.html)で出来る。
-- ロググループが stack で管理されないのを直したい。
+- [ ] Lambda Function URL で出来るか試す
+- [x] API Gateway が `/{proxy+} - ANY`になってる。これはどうしようもないのかな
+- [x] endpoint が `myapiEndpoint8EB17201` みたいので出るので、固定の CfnOutput()追加した。元のを消す方法がわからん
+- [x] デプロイせずに、ローカルで動くかためす。RequestContext に絡んだ奴はだめだろうけど。→ tsx いれて `bun dev`で動かすようにした
+- [x] esbuild するんだったら minify してほしい。→ やってみた。NodejsFunction() の [interface BundlingOptions · AWS CDK](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_lambda_nodejs.BundlingOptions.html) で出来る
+- [x] ロググループが stack で管理されないのを直したい → たぶん直した
 
 ## tags
 

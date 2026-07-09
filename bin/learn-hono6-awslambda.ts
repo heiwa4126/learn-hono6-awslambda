@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-import "source-map-support/register";
 import * as cdk from "aws-cdk-lib";
-import { LearnHono6AwslambdaStack } from "../lib/learn-hono6-awslambda-stack";
+import "source-map-support/register";
+import { LearnHono6AwsLambdaStack } from "../lib/learn-hono6-awslambda-stack";
 
 const app = new cdk.App();
-new LearnHono6AwslambdaStack(app, "LearnHono6AwslambdaStack", {
+new LearnHono6AwsLambdaStack(app, "LearnHono6AwsLambdaStack", {
 	/* If you don't specify 'env', this stack will be environment-agnostic.
 	 * Account/Region-dependent features and context lookups will not work,
 	 * but a single synthesized template can be deployed anywhere. */
