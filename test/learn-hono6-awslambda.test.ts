@@ -1,16 +1,29 @@
-// example test. To run these tests, uncomment this file along with the
-// example resource in lib/learn-hono6-awsLambda-stack.ts
+import { App } from "aws-cdk-lib";
+import { Template } from "aws-cdk-lib/assertions";
 import { test } from "bun:test";
 
-test("SQS Queue Created", () => {
-	// const app = new cdk.App();
-	// // WHEN
-	// const stack = new LearnHono6AwsLambda.LearnHono6AwsLambdaStack(app, "MyTestStack");
-	// // THEN
-	// const template = Template.fromStack(stack);
-	// template.hasResourceProperties("AWS::SQS::Queue", {
-	// 	VisibilityTimeout: 300,
-	// });
-});
+import { LearnHono6AwsLambdaStack } from "../lib/learn-hono6-awslambda-stack";
 
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+test("synthesizes the Lambda, URL, API Gateway, and log group", () => {
+	const app = new App();
+	const stack = new LearnHono6AwsLambdaStack(app, "MyTestStack");
+	const template = Template.fromStack(stack);
+
+	template.resourceCountIs("AWS::Lambda::Function", 1);
+	template.hasResourceProperties("AWS::Lambda::Function", {
+		Runtime: "nodejs24.x",
+	});
+
+	template.resourceCountIs("AWS::Lambda::Url", 1);
+	template.hasResourceProperties("AWS::Lambda::Url", {
+		AuthType: "NONE",
+	});
+
+	template.resourceCountIs("AWS::ApiGateway::RestApi", 1);
+	template.resourceCountIs("AWS::ApiGateway::Deployment", 1);
+
+	template.resourceCountIs("AWS::Logs::LogGroup", 1);
+	template.hasResourceProperties("AWS::Logs::LogGroup", {
+		RetentionInDays: 7,
+	});
+});
