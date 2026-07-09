@@ -7,7 +7,7 @@
 	"scripts": {
 		"build": "tsc",
 		"watch": "tsc -w",
-		"test": "bun test",
+		"test": "bun test test/*.test.ts",
 		"cdk": "cdk",
 		"preinstall": "bun audit",
 		"format": "oxfmt",
@@ -29,12 +29,10 @@
 	},
 	"devDependencies": {
 		"@hono/node-server": "^2.0.8",
-		"@types/jest": "^30.0.0",
 		"@types/node": "26.0.0",
 		"aws-cdk": "2.1128.1",
+		"bun-types": "latest",
 		"esbuild": "^0.28.1",
-		"jest": "^30.4.2",
-		"ts-jest": "^29.4.11",
 		"ts-node": "^10.9.2",
 		"tsx": "^4.23.0",
 		"typescript": "~6.0.3"

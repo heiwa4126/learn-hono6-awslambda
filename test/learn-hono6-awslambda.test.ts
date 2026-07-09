@@ -1,5 +1,7 @@
 // example test. To run these tests, uncomment this file along with the
 // example resource in lib/learn-hono6-awsLambda-stack.ts
+import { test } from "bun:test";
+
 test("SQS Queue Created", () => {
 	// const app = new cdk.App();
 	// // WHEN
