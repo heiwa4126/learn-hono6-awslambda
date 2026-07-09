@@ -1,5 +1,5 @@
 {
-	"app": "npx tsx bin/learn-hono6-awslambda.ts",
+	"app": "bunx tsx bin/learn-hono6-awslambda.ts",
 	"watch": {
 		"include": ["**"],
 		"exclude": [
