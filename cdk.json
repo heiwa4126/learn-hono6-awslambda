@@ -1,5 +1,5 @@
 {
-	"app": "bunx tsx bin/learn-hono6-awslambda.ts",
+	"app": "bun bin/learn-hono6-awslambda.ts",
 	"watch": {
 		"include": ["**"],
 		"exclude": [
@@ -10,6 +10,7 @@
 			"tsconfig.json",
 			"package*.json",
 			"yarn.lock",
+			"bun.lock",
 			"node_modules",
 			"test"
 		]
