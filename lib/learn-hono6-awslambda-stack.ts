@@ -33,6 +33,7 @@ export class LearnHono6AwsLambdaStack extends cdk.Stack {
 				allowedOrigins: ["*"], // まあテストなんで
 			},
 		});
+
 		new cdk.CfnOutput(this, "fnUrl_url", {
 			value: fnUrl.url,
 		});
@@ -40,6 +41,7 @@ export class LearnHono6AwsLambdaStack extends cdk.Stack {
 		const gw = new apigw.LambdaRestApi(this, "my_api1", {
 			handler: fn,
 		});
+		gw.node.tryRemoveChild("Endpoint"); // API GatewayのURLを出力するCfnOutputを削除するハック
 
 		new cdk.CfnOutput(this, "api_url", {
 			value: gw.url,

@@ -35,20 +35,24 @@ MyAppStack からリネーム。
 package.json にちょっとだけ run-script を追加して、
 
 ```sh
-# 以下2つはオプション、動作確認だけ
+# 以下4つはオプション. やらなくても deploy はできる
+bun run test		# `bun test` ではない
 bun run list    # "LearnHono6AwsLambdaStack"
-bun run build   # 'cdk.out/LearnHono6AwsLambdaStack.template.json'
+bun run synth		# ./cdk.out に CFn が合成される
+bun run build   # `bun build` ではない
+
 # 指定のリージョンでCDKを始めて使うなら
 bun run bootstrap
 #
 bun run deploy
+## ↑ で 'cdk.out/LearnHono6AwsLambdaStack.template.json'が 合成された CFn
 #
 bun run destroy
 ```
 
 ## TODO
 
-- [ ] endpoint が `myapiEndpoint8EB17201` みたいので出るので、固定の CfnOutput()追加した。元のを消す方法がわからん
+- [x] endpoint が `myapiEndpoint8EB17201` みたいので出るので、固定の CfnOutput()追加した。**元のを消す方法**がわからん → 変なハックを入れて消した
 - [x] Lambda Function URLs で出来るか試す → outputs.fnUrlurl に URLが出る。とりあえず動くみたい
 - [x] ts7 にして、CDK から ts-node 取り除く → done
 - [x] jest やめて bun test にする → done
