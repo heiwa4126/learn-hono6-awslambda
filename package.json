@@ -19,7 +19,7 @@
 		"bootstrap": "cdk bootstrap",
 		"diff": "cdk diff",
 		"destroy": "cdk destroy",
-		"dev": "tsx watch script/node.ts"
+		"dev": "bun --watch script/bun.ts"
 	},
 	"dependencies": {
 		"aws-cdk-lib": "2.260.0",
@@ -30,7 +30,6 @@
 		"source-map-support": "^0.5.21"
 	},
 	"devDependencies": {
-		"@hono/node-server": "^2.0.8",
 		"@types/node": "26.0.0",
 		"aws-cdk": "2.1128.1",
 		"bun-types": "latest",
