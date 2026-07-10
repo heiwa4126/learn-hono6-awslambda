@@ -17,7 +17,7 @@
 		"inlineSources": true,
 		"experimentalDecorators": true,
 		"strictPropertyInitialization": false,
-		"types": ["node", "bun-types"]
+		"types": ["bun-types"]
 	},
 	"exclude": ["node_modules", "cdk.out", "script", "test", "lambda", "bin"]
 }

@@ -35,18 +35,22 @@ MyAppStack からリネーム。
 package.json にちょっとだけ run-script を追加して、
 
 ```sh
-# 以下4つはオプション. やらなくても deploy はできる
+# 以下3つはオプション. やらなくても deploy はできる
 bun run test		# `bun test` ではない
 bun run list    # "LearnHono6AwsLambdaStack"
 bun run synth		# ./cdk.out に CFn が合成される
-bun run build   # `bun build` ではない
+
+# AWSにログイン(または環境変数等々)
+aws login
 
 # 指定のリージョンでCDKを始めて使うなら
 bun run bootstrap
 #
 bun run deploy
 ## ↑ で 'cdk.out/LearnHono6AwsLambdaStack.template.json'が 合成された CFn
-#
+## deploy に完了すると./outputs.json が生成される
+
+# テストが終わったら消す
 bun run destroy
 ```
 
