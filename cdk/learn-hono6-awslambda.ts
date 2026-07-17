@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import * as cdk from "aws-cdk-lib";
 import "source-map-support/register";
-import { LearnHono6AwsLambdaStack } from "../lib/learn-hono6-awslambda-stack";
+import { LearnHono6AwsLambdaStack } from "./learn-hono6-awslambda-stack";
 
 const app = new cdk.App();
 new LearnHono6AwsLambdaStack(app, "LearnHono6AwsLambdaStack", {

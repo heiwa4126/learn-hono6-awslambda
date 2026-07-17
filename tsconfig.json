@@ -19,5 +19,5 @@
 		"strictPropertyInitialization": false,
 		"types": ["bun-types"]
 	},
-	"exclude": ["node_modules", "cdk.out", "script", "test", "lambda", "bin"]
+	"exclude": ["node_modules", "cdk.out", "script", "test", "lambda"]
 }

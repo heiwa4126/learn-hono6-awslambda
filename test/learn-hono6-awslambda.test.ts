@@ -3,7 +3,7 @@ import { App } from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
 import { test } from "bun:test";
 
-import { LearnHono6AwsLambdaStack } from "../lib/learn-hono6-awslambda-stack";
+import { LearnHono6AwsLambdaStack } from "../cdk/learn-hono6-awslambda-stack";
 
 test("synthesizes the Lambda, URL, API Gateway, and log group", () => {
 	const app = new App();

@@ -1,5 +1,5 @@
 {
-	"app": "bun bin/learn-hono6-awslambda.ts",
+	"app": "bun cdk/learn-hono6-awslambda.ts",
 	"watch": {
 		"include": ["**"],
 		"exclude": [
