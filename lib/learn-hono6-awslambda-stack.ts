@@ -1,7 +1,7 @@
 import * as cdk from "aws-cdk-lib";
 import * as apigw from "aws-cdk-lib/aws-apigateway";
 import * as lambda from "aws-cdk-lib/aws-lambda";
-import { NodejsFunction } from "aws-cdk-lib/aws-lambda-nodejs";
+import { NodejsFunction, OutputFormat } from "aws-cdk-lib/aws-lambda-nodejs";
 import * as logs from "aws-cdk-lib/aws-logs";
 import type { Construct } from "constructs";
 
@@ -15,7 +15,7 @@ export class LearnHono6AwsLambdaStack extends cdk.Stack {
 			runtime: lambda.Runtime.NODEJS_24_X,
 			bundling: {
 				minify: true, // minifyオプションを有効にする
-				// format: OutputFormat.ESM, // ES Modulesを使用する。`[Warning at /LearnHono6AwsLambdaStack] If you are relying on AWS SDK v2 to be present in the Lambda environment already, please explicitly configure a NodeJS runtime of Node 16 or lower.`とか言われる。
+				format: OutputFormat.ESM, // ES Modulesを使用する
 				// externalModules: ["aws-sdk"], // AWS SDKは外部モジュールとして扱う（デフォルト）
 			},
 		});
