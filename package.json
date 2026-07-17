@@ -16,7 +16,8 @@
 		"bootstrap": "cdk bootstrap",
 		"diff": "cdk diff",
 		"destroy": "cdk destroy",
-		"dev": "bun --watch script/bun.ts"
+		"dev": "bun --watch script/bun.ts",
+		"curl": "./script/curl.sh"
 	},
 	"dependencies": {
 		"aws-cdk-lib": "2.261.0",
