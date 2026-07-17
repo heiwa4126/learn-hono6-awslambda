@@ -20,10 +20,10 @@
 		"curl": "./script/curl.sh"
 	},
 	"dependencies": {
+		"@js-temporal/polyfill": "^0.5.1",
 		"aws-cdk-lib": "2.261.0",
 		"constructs": "^10.7.0",
 		"cowsayjs": "^2.0.0",
-		"date-fns": "^4.4.0",
 		"hono": "^4.12.30",
 		"source-map-support": "^0.5.21"
 	},

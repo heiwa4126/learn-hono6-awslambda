@@ -27,7 +27,7 @@ describe("api1", () => {
 		const body = await res.json();
 		expect(body).toHaveProperty("date");
 		expect(typeof body.date).toBe("string");
-		expect(body.date).toMatch(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/);
+		expect(body.date).toMatch(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/);
 	});
 
 	test("GET /cowsay returns cowsay output containing 'hello'", async () => {
