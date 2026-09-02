@@ -15,14 +15,14 @@ export class LearnHono6AwsLambdaStack extends cdk.Stack {
 			runtime: lambda.Runtime.NODEJS_24_X,
 			bundling: {
 				minify: true, // minifyオプションを有効にする
-				format: OutputFormat.ESM, // ES Modulesを使用する
+				format: OutputFormat.ESM // ES Modulesを使用する
 				// externalModules: ["aws-sdk"], // AWS SDKは外部モジュールとして扱う（デフォルト）
-			},
+			}
 		});
 		new logs.LogGroup(this, "lambda1LogGroup", {
 			logGroupName: `/aws/lambda/${fn.functionName}`,
 			removalPolicy: cdk.RemovalPolicy.DESTROY,
-			retention: logs.RetentionDays.ONE_WEEK,
+			retention: logs.RetentionDays.ONE_WEEK
 		});
 
 		// Lambda Function URL版
@@ -30,21 +30,21 @@ export class LearnHono6AwsLambdaStack extends cdk.Stack {
 			authType: lambda.FunctionUrlAuthType.NONE,
 			cors: {
 				allowedMethods: [lambda.HttpMethod.ALL],
-				allowedOrigins: ["*"], // まあテストなんで
-			},
+				allowedOrigins: ["*"] // まあテストなんで
+			}
 		});
 
 		new cdk.CfnOutput(this, "fnUrl_url", {
-			value: fnUrl.url,
+			value: fnUrl.url
 		});
 
 		const gw = new apigw.LambdaRestApi(this, "my_api1", {
-			handler: fn,
+			handler: fn
 		});
 		gw.node.tryRemoveChild("Endpoint"); // API GatewayのURLを出力するCfnOutputを削除するハック
 
 		new cdk.CfnOutput(this, "api_url", {
-			value: gw.url,
+			value: gw.url
 		});
 	}
 }

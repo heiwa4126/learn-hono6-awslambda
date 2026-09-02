@@ -9,7 +9,7 @@ const port = Number(Bun.env.PORT ?? 3000);
 
 const server = Bun.serve({
 	fetch: app.fetch,
-	port,
+	port
 });
 
 console.log(`Server is running on ${server.url}`);

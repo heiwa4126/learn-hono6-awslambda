@@ -10,4 +10,5 @@ cdk.out
 outputs.json
 
 .github/context-mode
+.vscode/
 .claude/
